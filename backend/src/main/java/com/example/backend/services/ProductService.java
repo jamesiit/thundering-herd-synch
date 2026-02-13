@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 public class ProductService {
 
     ProductRepo productRepo;
+    Product product;
 
     public ProductService(ProductRepo productRepo) {
         this.productRepo = productRepo;
@@ -20,5 +21,9 @@ public class ProductService {
 
     public Product check(long id) {
         return productRepo.findById(id).orElse(null);
+    }
+
+    public int checkQuantity() {
+        return product.getProdQuantity();
     }
 }
